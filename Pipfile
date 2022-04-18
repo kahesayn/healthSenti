@@ -1,0 +1,35 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[packages]
+matplotlib = "*"
+gensim = "~=3.8.3"
+sklearn = "*"
+pytest = "*"
+requests = "*"
+commonmark = "*"
+codecov = "*"
+streamlit = "*"
+altair = "*"
+textblob = "*"
+scipy = "*"
+pylint = "*"
+importlib-metadata = "*"
+atomicwrites = "*"
+spacytextblob = "*"
+wbgapi = "*"
+tweepy = "*"
+flair = "*"
+torchvision = "*"
+spacy = "==3.2.0"
+
+[pipenv]
+allow_prereleases = true

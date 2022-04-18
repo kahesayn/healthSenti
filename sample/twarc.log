@@ -1,0 +1,43 @@
+2022-04-14 18:29:59,771 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:29:59,771 INFO creating HTTP session headers for app auth.
+2022-04-14 18:30:08,894 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:30:08,895 INFO creating HTTP session headers for app auth.
+2022-04-14 18:30:08,895 INFO getting ('https://api.twitter.com/1.1/geo/search.json',) {'params': {'query': 'ethiopia', 'granularity': 'neighborhood', 'max_results': None}}
+2022-04-14 18:37:34,290 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:37:34,291 INFO creating HTTP session headers for app auth.
+2022-04-14 18:37:56,602 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:37:56,602 INFO creating HTTP session headers for app auth.
+2022-04-14 18:37:56,641 INFO getting ('https://api.twitter.com/2/tweets/search/recent',) {'params': {'expansions': 'author_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id,entities.mentions.username,attachments.poll_ids,attachments.media_keys,geo.place_id', 'tweet.fields': 'attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,text,possibly_sensitive,referenced_tweets,reply_settings,source,withheld', 'user.fields': 'created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld', 'media.fields': 'alt_text,duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics', 'poll.fields': 'duration_minutes,end_datetime,id,options,voting_status', 'place.fields': 'contained_within,country,country_code,full_name,geo,id,name,place_type', 'start_time': '2022-04-14T00:00:00+00:00', 'end_time': None, 'query': 'place:c3b85cf1d8b226f2 Malaria OR #malaria', 'max_results': 100}}
+2022-04-14 18:37:56,839 ERROR Unexpected HTTP response: <Response [400]>
+2022-04-14 18:48:41,484 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:48:41,485 INFO creating HTTP session headers for app auth.
+2022-04-14 18:48:57,805 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:48:57,806 INFO creating HTTP session headers for app auth.
+2022-04-14 18:49:26,764 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:49:26,765 INFO creating HTTP session headers for app auth.
+2022-04-14 18:50:20,907 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:50:20,908 INFO creating HTTP session headers for app auth.
+2022-04-14 18:50:59,665 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:50:59,666 INFO creating HTTP session headers for app auth.
+2022-04-14 18:53:21,307 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:53:21,308 INFO creating HTTP session headers for app auth.
+2022-04-14 18:53:56,808 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:53:56,808 INFO creating HTTP session headers for app auth.
+2022-04-14 18:54:07,577 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:54:07,578 INFO creating HTTP session headers for app auth.
+2022-04-14 18:56:36,843 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:56:36,843 INFO creating HTTP session headers for app auth.
+2022-04-14 18:56:55,111 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:56:55,111 INFO creating HTTP session headers for app auth.
+2022-04-14 18:56:55,138 INFO getting ('https://api.twitter.com/2/tweets/search/recent',) {'params': {'expansions': 'author_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id,entities.mentions.username,attachments.poll_ids,attachments.media_keys,geo.place_id', 'tweet.fields': 'attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,text,possibly_sensitive,referenced_tweets,reply_settings,source,withheld', 'user.fields': 'created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld', 'media.fields': 'alt_text,duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics', 'poll.fields': 'duration_minutes,end_datetime,id,options,voting_status', 'place.fields': 'contained_within,country,country_code,full_name,geo,id,name,place_type', 'start_time': '2022-04-14T00:00:00+00:00', 'end_time': None, 'query': 'Malaria OR #malaria', 'max_results': 100}}
+2022-04-14 18:56:56,234 INFO archived 1514739274427551751,1514738909602852871,1514738546116018179,1514738471658737675,1514738219258159107,1514738047488720900,1514738044909326343,1514737983634636809,1514737683763023882,1514737632168792064,1514737583221362688,1514737378258206727,1514736945959682050,1514736925214658565,1514736918763913224,1514736829777518601,1514736492421152772,1514736150283386903,1514736144356937737,1514735954438807556,1514735862868852743,1514735807562661894,1514735772284428296,1514735726759452672,1514735576360095750,1514735368033161229,1514735356939276293,1514735049148706824,1514734888368414720,1514734737373466631,1514734214549327877,1514734037444841476,1514734009443663874,1514733931031113729,1514733887213215746,1514733767306403840,1514733577132462088,1514733574284533763,1514733410115334150,1514733405581287432,1514733363701055491,1514733222818689038,1514733161619542018,1514733023832547328,1514732813836300292,1514732681765945369,1514732589235404816,1514732474638778376,1514732232203771909,1514732081745698820,1514731949876674585,1514731433562185737,1514731259309838338,1514731244000579585,1514730905222500364,1514730763547295745,1514730408990191618,1514730371908358145,1514730265364496451,1514730139850055687,1514729704334442502,1514729369029197829,1514729293712085008,1514729184278552582,1514728285997088771,1514728216094720010,1514728183500791817,1514728158012059656,1514728055859728395,1514727765349707784,1514727764598865920,1514727751256735776,1514727316638871557,1514726816136712199,1514726808100474884,1514726653620101127,1514726650075832325,1514726407032741894,1514726393325621250,1514726175217647631,1514726108230520836,1514726078702575621,1514726062546161673,1514725993306537985,1514725888654553091,1514725835726540807,1514725827962888196,1514725786682597376,1514725677592887300,1514725675827007488,1514725605954056194,1514725482700451849,1514725404992495616,1514725337568931840,1514724976112422919,1514724957007323145,1514724695123369993,1514724547907530765,1514724465871052804,1514723999342805013
+2022-04-14 18:58:36,781 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:58:36,782 INFO creating HTTP session headers for app auth.
+2022-04-14 18:58:47,645 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:58:47,645 INFO creating HTTP session headers for app auth.
+2022-04-14 18:58:58,564 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:58:58,564 INFO creating HTTP session headers for app auth.
+2022-04-14 18:59:36,279 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:59:36,279 INFO creating HTTP session headers for app auth.
+2022-04-14 18:59:56,726 INFO using config /Users/nati/Library/Application Support/twarc/config
+2022-04-14 18:59:56,726 INFO creating HTTP session headers for app auth.
