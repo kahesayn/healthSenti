@@ -17,7 +17,9 @@ import matplotlib.pyplot as plt
 from matplotlib import style
 
 sia = TextClassifier.load('en-sentiment')
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("xx_sent_ud_sm")
+nlp.add_pipe('spacytextblob')
 
 consumer_key = '6TF530DVabB3XZPRlWVojAwKF'
 consumer_secret = 'xakc3egwiugqF6C0oxdgCQHx58JGhl3k0buKA9aoBgU76QLqvZ'
@@ -32,7 +34,6 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def spacySentiment(tweet):
-    # nlp.add_pipe('spacytextblob')
     doc = nlp(tweet)
     pol = doc._.polarity
     return pol
@@ -79,26 +80,76 @@ def live_twitter(topic, country):
     tweet_text = pd.DataFrame(tweets)
     st.write(tweet_text)
 
-def downloaded_twitter(topic, country):
+def downloaded_twitter(topic, country, start_year, end_year):
+    df_dict = {}
+    years = []
     if topic == "Tuberculosis" and country == "Ethiopia":
-        df = pd.read_csv (r'data/Twitter/EthTB.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/EthTB' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "Tuberculosis" and country == "Nigeria":
-        df = pd.read_csv (r'data/Twitter/NgaTB.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/NgrTB' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "Tuberculosis" and country == "India":
-        df = pd.read_csv (r'data/Twitter/IndTB.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/IndTB' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "Malaria" and country == "Ethiopia":
-        df = pd.read_csv (r'data/Twitter/EthMalaria.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/EthMal' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "Malaria" and country == "Nigeria":
-        df = pd.read_csv (r'data/Twitter/NgaMalaria.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/NgrMal' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "Malaria" and country == "India":
-        df = pd.read_csv (r'data/Twitter/IndMalaria.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/IndMal' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "HIV/AIDS" and country == "Ethiopia":
-        df = pd.read_csv (r'data/Twitter/EthHIV.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/EthHIV' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "HIV/AIDS" and country == "Nigeria":
-        df = pd.read_csv (r'data/Twitter/NgaHIV.csv')
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/NgrHIV' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
     if topic == "HIV/AIDS" and country == "India":
-        df = pd.read_csv (r'data/Twitter/IndHIV.csv')
-    return df
+        while start_year <= end_year:
+            years.append(start_year)
+            name = 'data/Twitter/IndHIV' + str(start_year) + '.csv'
+            df_dict[start_year] = pd.read_csv(name)
+            df_dict[start_year]['Year'] = start_year
+            start_year += 1
+
+    df_total = pd.DataFrame()
+    df_total = pd.concat(df_dict.values(), keys=years)
+    return df_total, df_dict
 
 def analyzer(df, sent):
     df2 = process_tweets(df)
@@ -112,7 +163,7 @@ def analyzer(df, sent):
     return df2
 
 def process_tweets(df):
-    newdf = df.filter(['id','created_at','text'], axis=1)
+    newdf = df.filter(['id','created_at','text','Year'], axis=1)
     return newdf
 
 def string_to_num(string):
@@ -133,6 +184,27 @@ def flair_sent(tweets):
         sent = 0
     return sent
 
+def avg_sentiment(df_dict, sent):
+    sent_dict={}
+    for year, df in df_dict.items():
+        sentiments = []
+        df_new = process_tweets(df_dict[year])
+        for value in df_new["text"]:
+            if sent == "Flair":
+                sentiments.append(flair_sent(value))
+            if sent == "spaCy":
+                sentiments.append(spacySentiment(value))
+        avg_sent = sum(sentiments)/len(sentiments)
+        sent_dict[year] = avg_sent
+    return sent_dict
+
+def graphsent(df_dict):
+    df = pd.DataFrame(df_dict.items(), columns=['Year', 'Sentiment'])
+    fig, ax = plt.subplots()
+    x = df['Year']
+    y = df['Sentiment']
+    ax.plot(x, y)
+    st.pyplot(ax.figure)
 
 def graph_sentiment(df):
     style.use("ggplot")
@@ -147,7 +219,7 @@ def graph_sentiment(df):
 
     for value in df["Sentiment"]:
         x += 1
-        y += value
+        y += float(value)
 
         xar.append(x)
         yar.append(y)

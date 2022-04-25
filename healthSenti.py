@@ -38,10 +38,13 @@ with public:
     type_sent = st.radio("Please choose a sentiment analyzer: ", ("Flair", "spaCy"))
     type_pub = st.radio("Please choose between either downloaded or live official data. (For faster processing time, downloaded option is recommended.)", ("Downloaded", "Live"))
     if type_pub == "Downloaded":
-        df = downloaded_twitter(topic, country)
+        df, df_dict = downloaded_twitter(topic, country, start_time, end_time)
         df2 = analyzer(df, type_sent)
-        st.write(df2)
-        graph_sentiment(df2)
+        # st.write(df2)
+        sent_dict = avg_sentiment(df_dict, type_sent)
+        # st.write(sent_dict)
+        graphsent(sent_dict)
+        # graph_sentiment(df2)
     if type_pub == "Live":
         live_twitter(topic, country)
 

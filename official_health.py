@@ -16,16 +16,17 @@ def downloaded_offdata(topic, country):
         c = alt.Chart(df, title="Malaria Incidence").mark_line().encode(x='Year', y='Malaria-Incidence')
         st.altair_chart(c, use_container_width=True)
     if(topic == "Tuberculosis"):
-        c = alt.Chart(df, title="Malaria Incidence").mark_line().encode(x='Year', y='TB-Incidence')
+        c = alt.Chart(df, title="Tuberculosis Incidence").mark_line().encode(x='Year', y='TB-Incidence')
         st.altair_chart(c, use_container_width=True)
     if (topic == "HIV/AIDS"):
-        c = alt.Chart(df, title="Malaria Incidence").mark_line().encode(x='Year', y='HIV-Incidence')
+        c = alt.Chart(df, title="HIV/AIDS Incidence").mark_line().encode(x='Year', y='HIV-Incidence')
         st.altair_chart(c, use_container_width=True)
 
 def live_offdata(topic, country, start_time, end_time):
     getWBdata(topic, country, start_time, end_time)
 
 def getWBdata(topic, country, start_time, end_time):
+    end_time +=1
     if (country == "Ethiopia"):
         ccode = 'ETH'
     if (country == "India"):
