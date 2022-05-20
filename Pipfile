@@ -30,6 +30,12 @@ tweepy = "*"
 flair = "*"
 torchvision = "*"
 spacy = "==3.2.0"
+wordcloud = "*"
+twarc = "*"
+twarc-csv = "*"
+protobuf="3.20.1"
+sacremoses = "*"
+pycountry = "*"
 
 [pipenv]
 allow_prereleases = true
