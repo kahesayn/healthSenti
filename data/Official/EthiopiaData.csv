@@ -1,4 +1,4 @@
-﻿Year,Country,HIV-Incidence,TB-Incidence,Malaria-Incidence,NewHiv,Hiv-Prevelance
+﻿Year,Country,HIV-Incidence,TB-Incidence,Mal-Incidence,NewHiv,Hiv-Prevelance
 2001,Ethiopia,1.03,409,157.31,57000,2.4
 2002,Ethiopia,0.9,393,155.28,52000,2.2
 2003,Ethiopia,0.8,376,183.52,47000,2.1
@@ -8,11 +8,11 @@
 2007,Ethiopia,0.52,310,121.69,35000,1.6
 2008,Ethiopia,0.45,296,90.66,31000,1.5
 2009,Ethiopia,0.41,282,123.35,29000,1.4
-2010,Ethiopia,0.36,268,128.40,27000,1.4
+2010,Ethiopia,0.36,268,128.4,27000,1.4
 2011,Ethiopia,0.32,253,116.13,24000,1.3
 2012,Ethiopia,0.28,239,116.19,22000,1.3
-2013,Ethiopia,0.24,224,111.60,19000,1.2
-2014,Ethiopia,0.22,207,57.10,18000,1.2
+2013,Ethiopia,0.24,224,111.6,19000,1.2
+2014,Ethiopia,0.22,207,57.1,18000,1.2
 2015,Ethiopia,0.2,192,52.77,17000,1.1
 2016,Ethiopia,0.19,177,41.41,16000,1.1
 2017,Ethiopia,0.17,164,36.74,15000,1
