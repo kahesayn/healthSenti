@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import tweepy as tw
-from twitter_data import *
+from src.twitter_data import *
 import altair as alt
 import wbgapi as wb
 import matplotlib.pyplot as plt
-from official_health import *
+from src.official_health import *
 from PIL import Image
 import datetime
 
